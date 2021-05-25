@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";
 import { uploadVideo } from "./api/index.js";
 import QUESTIONS from "./questions.js";
