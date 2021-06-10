@@ -1,18 +1,23 @@
 {
   "name": "flatiron-vimeo-uploader",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Tool for uploading lecture videos to Vimeo and syncing details with Google Sheets",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "flatiron-vimeo-uploader": "./index.js"
+    "flatiron-vimeo-uploader": "bin/flatiron-vimeo-uploader.js"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cli",
+    "vimeo",
+    "google",
+    "sheets"
+  ],
+  "author": "Flatiron School",
+  "license": "MIT",
   "dependencies": {
     "google-spreadsheet": "^3.1.15",
     "inquirer": "^8.1.0",
