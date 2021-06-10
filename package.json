@@ -1,5 +1,5 @@
 {
-  "name": "flatiron-vimeo-uploader",
+  "name": "@learn-co-curriculum/flatiron-vimeo-uploader",
   "version": "0.1.0",
   "description": "Tool for uploading lecture videos to Vimeo and syncing details with Google Sheets",
   "main": "src/index.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "flatiron-vimeo-uploader": "bin/flatiron-vimeo-uploader.js"
+    "flatiron-vimeo-uploader": "bin/flatiron-vimeo-uploader.js",
+    "@learn-co-curriculum/flatiron-vimeo-uploader": "bin/flatiron-vimeo-uploader.js"
   },
   "type": "module",
   "keywords": [
@@ -24,5 +25,13 @@
     "inquirer-file-tree-selection-prompt": "^1.0.7",
     "progress": "^2.0.3",
     "vimeo": "^2.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learn-co-curriculum/flatiron-vimeo-uploader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/learn-co-curriculum/flatiron-vimeo-uploader/issues"
+  },
+  "homepage": "https://github.com/learn-co-curriculum/flatiron-vimeo-uploader#readme"
 }
