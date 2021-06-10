@@ -2,16 +2,16 @@
 
 ## Setup
 
-Clone/download, then install dependencies:
+Install CLI app globally:
 
 ```sh
-npm i
+npm i -g @learn-co-curriculum/flatiron-vimeo-uploader
 ```
 
-Next, install CLI app globally:
+To run:
 
 ```sh
-npm i -g
+flatiron-vimeo-uploader
 ```
 
 ## Environment Variables
