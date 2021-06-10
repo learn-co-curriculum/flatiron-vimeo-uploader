@@ -1,9 +1,9 @@
-const QUESTIONS = [
+const questions = [
   {
-    type: "input",
+    type: "file-tree-selection",
     name: "filePath",
     message:
-      "Enter the path to the video file (i.e. ./videos/phase-1-intro-react.mov)",
+      "Select video file (use arrows to navigate; tab to enter directory)",
   },
   {
     type: "list",
@@ -36,8 +36,8 @@ const QUESTIONS = [
   {
     type: "list",
     name: "coast",
-    message: "East or West Coast?",
-    choices: ["East Coast", "West Coast"],
+    message: "Coast?",
+    choices: ["East", "Central", "West"],
   },
   {
     type: "list",
@@ -47,4 +47,4 @@ const QUESTIONS = [
   },
 ];
 
-export default QUESTIONS;
+export default questions;

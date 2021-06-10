@@ -16,6 +16,8 @@
   "dependencies": {
     "google-spreadsheet": "^3.1.15",
     "inquirer": "^8.1.0",
+    "inquirer-file-tree-selection-prompt": "^1.0.7",
+    "progress": "^2.0.3",
     "vimeo": "^2.1.1"
   }
 }
