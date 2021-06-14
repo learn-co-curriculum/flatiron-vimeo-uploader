@@ -51,7 +51,7 @@ async function cli() {
 
     const tags = [
       discipline,
-      phase,
+      phase.replace(/\s/g, ""),
       lesson.replace(/[^A-z]|pt./g, ""),
       coast,
       time,
@@ -84,4 +84,4 @@ async function cli() {
   }
 }
 
-export default cli
+export default cli;
