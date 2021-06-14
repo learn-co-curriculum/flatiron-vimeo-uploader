@@ -1,30 +1,25 @@
 #!/usr/bin/env node
 import fs from "fs";
-import inquirer from "inquirer";
-import inquirerFileTreeSelection from "inquirer-file-tree-selection-prompt";
 import ProgressBar from "progress";
 import { addLectureToSheet } from "./api/sheets.js";
-import { uploadVideo } from "./api/vimeo.js";
-import questions from "./questions.js";
-
-inquirer.registerPrompt("file-tree-selection", inquirerFileTreeSelection);
+import { uploadVideo, addToFolder } from "./api/vimeo.js";
+import { getAnswers } from "./questions.js";
 
 async function cli() {
   // Prompt user for video information
-  const { discipline, program, cohort, phase, lesson, coast, time, filePath } =
-    await inquirer.prompt(questions);
+  const {
+    filePath,
+    folderUri,
+    discipline,
+    program,
+    cohort,
+    phase,
+    lesson,
+    coast,
+    time,
+  } = await getAnswers();
 
   try {
-    const videoName = [
-      discipline,
-      program,
-      cohort,
-      phase,
-      lesson,
-      coast,
-      time,
-    ].join(" - ");
-
     // Upload to Vimeo
     const fileStats = fs.statSync(filePath);
 
@@ -38,12 +33,26 @@ async function cli() {
       }
     );
 
+    const videoName = [
+      discipline,
+      program,
+      cohort,
+      phase,
+      lesson,
+      coast,
+      time,
+    ].join(" - ");
+
     const uri = await uploadVideo(filePath, videoName, (bytesUploaded) =>
       bar.tick(bytesUploaded - bar.curr)
     );
-    const vimeoId = uri.split("/").slice(-1);
-    const vimeo = `https://vimeo.com/${vimeoId}`;
-    console.log(`📽  Video uploaded to: ${vimeo}`);
+    const [videoId] = uri.split("/").slice(-1);
+    // Move video to correct Vimeo folder
+    const res = await addToFolder(folderUri, videoId);
+    console.log(res);
+
+    const vimeoUrl = `https://vimeo.com/${videoId}`;
+    console.log(`📽  Video uploaded to: ${vimeoUrl}`);
 
     // Add video details to Google Sheet
     console.log();
@@ -68,7 +77,7 @@ async function cli() {
       lesson,
       coastWithTime,
       tags,
-      vimeo
+      vimeoUrl
     );
 
     console.log(
