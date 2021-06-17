@@ -39,7 +39,7 @@ Run:
 flatiron-vimeo-uploader
 ```
 
-And follow the prompts! 
+And follow the prompts!
 
 After you've filled them in for the first time, you'll see a print out to the console that looks something like this:
 
