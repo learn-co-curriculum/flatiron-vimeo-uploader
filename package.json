@@ -1,6 +1,6 @@
 {
   "name": "@learn-co-curriculum/flatiron-vimeo-uploader",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Tool for uploading lecture videos to Vimeo and syncing details with Google Sheets",
   "main": "src/index.js",
   "scripts": {
