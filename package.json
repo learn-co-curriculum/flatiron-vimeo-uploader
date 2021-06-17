@@ -4,7 +4,8 @@
   "description": "Tool for uploading lecture videos to Vimeo and syncing details with Google Sheets",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "bin": {
     "flatiron-vimeo-uploader": "bin/flatiron-vimeo-uploader.js",
@@ -33,5 +34,17 @@
   "bugs": {
     "url": "https://github.com/learn-co-curriculum/flatiron-vimeo-uploader/issues"
   },
-  "homepage": "https://github.com/learn-co-curriculum/flatiron-vimeo-uploader#readme"
+  "homepage": "https://github.com/learn-co-curriculum/flatiron-vimeo-uploader#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
 }
