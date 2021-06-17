@@ -39,7 +39,21 @@ Run:
 flatiron-vimeo-uploader
 ```
 
-And follow the prompts!
+And follow the prompts! 
+
+After you've filled them in for the first time, you'll see a print out to the console that looks something like this:
+
+```bash
+If you'd like to set these choices as defaults, add these exports to your .bash_profile or .zshrc
+export FVU_FOLDER_URI=/users/106070186/projects/4269902
+export FVU_DISCIPLINE=SE
+export FVU_PROGRAM=Live
+export FVU_COHORT=042621
+export FVU_PHASE="Phase 3"
+export FVU_COAST=Central
+```
+
+If you copy these Environment Variables to your `.bash_profile` or `.zshrc`, then next time you run the importer they'll be selected by default and you won't have to choose them again.
 
 ## Contributing
 
