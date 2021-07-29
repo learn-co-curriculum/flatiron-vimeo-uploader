@@ -3,9 +3,11 @@ import fs from "fs";
 import ProgressBar from "progress";
 import { addLectureToSheet } from "./api/sheets.js";
 import { uploadVideo, addToFolder } from "./api/vimeo.js";
+import { validateEnvironmentVariables } from "./env-validator.js";
 import { getAnswers } from "./questions.js";
 
 async function cli() {
+  validateEnvironmentVariables();
   // Prompt user for video information
   const {
     filePath,
